@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Profile" Class="DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=Profile;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="ProfileConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.T_Permission" Member="PermissionDTO">
+    <Type Name="PermissionDTO">
+      <Column Name="Role_Code" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Resource_Code" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.T_Resource" Member="ResourceDTO">
+    <Type Name="ResourceDTO">
+      <Column Name="Code" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" CanBeNull="false" />
+      <Column Name="Url" Type="System.String" CanBeNull="false" />
+      <Column Name="Sort" Type="System.Int32" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.T_Role" Member="RoleDTO">
+    <Type Name="RoleDTO">
+      <Column Name="Code" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.T_User" Member="UserDTO">
+    <Type Name="UserDTO">
+      <Column Name="Login_Id" Member="Login_ID" Storage="_Login_Id" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Role_Code" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Department_ID" Type="System.Int64" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.T_Department" Member="DepartmentDTO">
+    <Type Name="DepartmentDTO">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.T_Profile" Member="ProfileDTO">
+    <Type Name="ProfileDTO">
+      <Column Name="Barcode" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Project_Code" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Project_Stage" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Project_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Project_Subject" Storage="_Professional" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="File_Name" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Diagram_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Diagram_Code" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Diagram_Scale" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Diagram_Version" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Plotter" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Created_Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.T_Project" Member="ProjectDTO">
+    <Type Name="ProjectDTO">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Project_Code" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Project_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Project_Date" Type="System.String" DbType="Varchar" CanBeNull="false" />
+      <Column Name="Business_Owner" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(550)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.T_ProjectSubject" Member="ProjectSubjectDTO">
+    <Type Name="ProjectSubjectDTO">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.T_ProjectStage" Member="ProjectStageDTO">
+    <Type Name="ProjectStageDTO">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.T_ProfileTemporary" Member="ProfileTemporaryDTO">
+    <Type Name="ProfileTemporaryDTO">
+      <Column Name="Barcode" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Project_Code" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Project_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Project_Date" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Project_Stage" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Project_Subject" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Business_Owner" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="File_Name" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Diagram_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Diagram_Code" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Diagram_Scale" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Diagram_Version" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Plotter" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Created_Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.T_Audit" Member="AuditDTO">
+    <Type Name="AuditDTO">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Project_Code" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Project_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Project_Stage" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Project_Subject" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Barcode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Diagram_Name" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="File_Name" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Login_ID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Reason" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="false" />
+      <Column Name="Apply_Date" Type="System.DateTime" CanBeNull="true" />
+      <Column Name="Audit_Date" Type="System.DateTime" CanBeNull="true" />
+      <Column Name="Audit_User_ID" Type="System.String" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

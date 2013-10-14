@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Data.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+        <EntityContainer Name="DataStoreContainer">
+          <EntitySet Name="T_Profile" EntityType="Data.Store.T_Profile" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="T_ProfileTemporary" EntityType="Data.Store.T_ProfileTemporary" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="T_Profile">
+          <Key>
+            <PropertyRef Name="Serial_Code" />
+          </Key>
+          <Property Name="Serial_Code" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Enterprise_Name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Project_Name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Project_Content" Type="varchar" Nullable="false" MaxLength="250" />
+          <Property Name="Project_Code" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Project_Picture_Code" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Project_Date" Type="datetime" Nullable="false" />
+          <Property Name="Project_Version" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Project_Design_Stage" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Professional" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Create_Date" Type="datetime" Nullable="false" />
+          <Property Name="Creator" Type="varchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="T_ProfileTemporary">
+          <Key>
+            <PropertyRef Name="Serial_Code" />
+          </Key>
+          <Property Name="Serial_Code" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Enterprise_Name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Project_Name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Project_Content" Type="varchar" Nullable="false" MaxLength="250" />
+          <Property Name="Project_Code" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Project_Picture_Code" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Project_Date" Type="datetime" Nullable="false" />
+          <Property Name="Project_Version" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Project_Design_Stage" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Professional" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Create_Date" Type="datetime" Nullable="false" />
+          <Property Name="Creator" Type="varchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Data" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+        <EntityContainer Name="ProfileEntities">
+          <EntitySet Name="T_Profile" EntityType="Data.T_Profile" />
+          <EntitySet Name="T_ProfileTemporary" EntityType="Data.T_ProfileTemporary" />
+        </EntityContainer>
+        <EntityType Name="T_Profile">
+          <Key>
+            <PropertyRef Name="Serial_Code" />
+          </Key>
+          <Property Name="Serial_Code" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Enterprise_Name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Project_Name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Project_Content" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="Project_Code" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Project_Picture_Code" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Project_Date" Type="DateTime" Nullable="false" />
+          <Property Name="Project_Version" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Project_Design_Stage" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Professional" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Create_Date" Type="DateTime" Nullable="false" />
+          <Property Name="Creator" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="T_ProfileTemporary">
+          <Key>
+            <PropertyRef Name="Serial_Code" />
+          </Key>
+          <Property Name="Serial_Code" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Enterprise_Name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Project_Name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Project_Content" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="Project_Code" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Project_Picture_Code" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Project_Date" Type="DateTime" Nullable="false" />
+          <Property Name="Project_Version" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Project_Design_Stage" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Professional" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Create_Date" Type="DateTime" Nullable="false" />
+          <Property Name="Creator" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+        <EntityContainerMapping StorageEntityContainer="DataStoreContainer" CdmEntityContainer="ProfileEntities">
+          <EntitySetMapping Name="T_Profile"><EntityTypeMapping TypeName="Data.T_Profile"><MappingFragment StoreEntitySet="T_Profile">
+            <ScalarProperty Name="Serial_Code" ColumnName="Serial_Code" />
+            <ScalarProperty Name="Enterprise_Name" ColumnName="Enterprise_Name" />
+            <ScalarProperty Name="Project_Name" ColumnName="Project_Name" />
+            <ScalarProperty Name="Project_Content" ColumnName="Project_Content" />
+            <ScalarProperty Name="Project_Code" ColumnName="Project_Code" />
+            <ScalarProperty Name="Project_Picture_Code" ColumnName="Project_Picture_Code" />
+            <ScalarProperty Name="Project_Date" ColumnName="Project_Date" />
+            <ScalarProperty Name="Project_Version" ColumnName="Project_Version" />
+            <ScalarProperty Name="Project_Design_Stage" ColumnName="Project_Design_Stage" />
+            <ScalarProperty Name="Professional" ColumnName="Professional" />
+            <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+            <ScalarProperty Name="Creator" ColumnName="Creator" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="T_ProfileTemporary"><EntityTypeMapping TypeName="Data.T_ProfileTemporary"><MappingFragment StoreEntitySet="T_ProfileTemporary">
+            <ScalarProperty Name="Serial_Code" ColumnName="Serial_Code" />
+            <ScalarProperty Name="Enterprise_Name" ColumnName="Enterprise_Name" />
+            <ScalarProperty Name="Project_Name" ColumnName="Project_Name" />
+            <ScalarProperty Name="Project_Content" ColumnName="Project_Content" />
+            <ScalarProperty Name="Project_Code" ColumnName="Project_Code" />
+            <ScalarProperty Name="Project_Picture_Code" ColumnName="Project_Picture_Code" />
+            <ScalarProperty Name="Project_Date" ColumnName="Project_Date" />
+            <ScalarProperty Name="Project_Version" ColumnName="Project_Version" />
+            <ScalarProperty Name="Project_Design_Stage" ColumnName="Project_Design_Stage" />
+            <ScalarProperty Name="Professional" ColumnName="Professional" />
+            <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+            <ScalarProperty Name="Creator" ColumnName="Creator" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="DataContext">
+        <EntityTypeShape EntityType="Data.T_Profile" Width="1.5" PointX="0.75" PointY="0.75" Height="2.9070849609374996" IsExpanded="true" />
+        <EntityTypeShape EntityType="Data.T_ProfileTemporary" Width="1.5" PointX="2.75" PointY="0.75" Height="2.9070849609374996" IsExpanded="true" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
